@@ -14,8 +14,14 @@ body{
 }
 
 .card-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: 3.5vw;
-    background-color: black
+    background-color: black;
+    font-size: 1.2rem;
+    
+    
 }
 
 form{
@@ -24,16 +30,29 @@ form{
 
 
 .container{
+    margin-top: 2vw;
     display: flex;
     justify-content: center;
+    gap: 2vw;
+    flex-wrap: wrap;
     
 }
 .card{
+    text-align: center;
     width: 10vw;
 
     height: 15vw;
     box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.9);
     transition: 0.3s;
     background-color: rgb(129, 55, 2);
+    color: blanchedalmond;
 
+}
+
+.cost{
+    min-height: 30%;
+
+}
+.total{
+    min-height: 30%;
 }

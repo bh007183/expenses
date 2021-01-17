@@ -20,6 +20,20 @@ app.get('/api/stats', function(request, response){
     })
 })
 
+app.post('/api/stats', function(request, response){
+    fs.readFile(path.join(__dirname, "jb.json"), "utf8", (err, data) => {
+        if(err) throw err
+        const statsArray = JSON.parse(data)
+        console.log(statsArray)
+        statsArray.push(request.body)
+        console.log(request.body)
+        fs.writeFile(path.join(__dirname, "jb.json"), JSON.stringify(statsArray), (err)=>{
+            if (err) throw err
+        // response.json(request.body)
+           })
+    })
+})
+
 
 
 
