@@ -29,7 +29,7 @@ app.post('/api/stats', function(request, response){
         console.log(request.body)
         fs.writeFile(path.join(__dirname, "jb.json"), JSON.stringify(statsArray), (err)=>{
             if (err) throw err
-        // response.json(request.body)
+        response.json(request.body)
            })
     })
 })

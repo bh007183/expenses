@@ -1,4 +1,5 @@
 
+
 readStats()
 
 function readStats(){
@@ -24,26 +25,29 @@ function readStats(){
 $(".enter").on("click", function(event){ 
     event.preventDefault()
     $(".container").empty()
-    $("input").empty()
-
 
     const inpute = {
         title: $(".input-title").val(),
         cost:$(".input-cost").val(),
         total:$(".input-total").val()
     }
-
     $.ajax({
         url: "/api/stats",
         method: "POST",
-        data: inpute
+        data: inpute,
+       success: function(data){$(".container").append(
+        `<div class="card">
+        <div class="title card-header">${data.title}</div>
+        <div class="cost">${data.cost}</div>
+        <div class="total">${data.total}</div>
+        </div>`
+        )}
     })
-
-
     readStats()
+    $(".input").val("")
+
 
 })
-
 
 
 
